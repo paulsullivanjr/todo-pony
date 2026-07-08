@@ -1,0 +1,10 @@
+_corral/
+_repos/
+build/
+lock.json
+assets/app.css
+
+# Claude Code planning artifacts (specs, plans) — kept on disk, out of git
+.claude/
+docs/superpowers/
+tasks/

@@ -1,11 +1,18 @@
 DEFINES := -Dopenssl_3.0.x
+TAILWIND := ./tailwindcss
 
-.PHONY: fetch build run clean build-dir
+.PHONY: fetch css css-watch build run clean build-dir
 
 fetch:
 	corral fetch
 
-build: | build-dir
+css:
+	$(TAILWIND) -i assets/tailwind.css -o assets/app.css --minify
+
+css-watch:
+	$(TAILWIND) -i assets/tailwind.css -o assets/app.css --watch
+
+build: css | build-dir
 	corral run -- ponyc $(DEFINES) --bin-name todo --output build ./bin
 
 run: build

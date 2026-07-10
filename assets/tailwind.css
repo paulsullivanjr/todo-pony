@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Scan our Pony source for utility class names. Paths are relative to this
+   file. `_corral/` and `_repos/` are gitignored, so Tailwind won't scan the
+   dependencies. Class names must appear as complete literal strings. */
+@source "../todo";
+@source "../bin";

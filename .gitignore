@@ -3,6 +3,7 @@ _repos/
 build/
 lock.json
 assets/app.css
+tailwindcss
 
 # Claude Code planning artifacts (specs, plans) — kept on disk, out of git
 .claude/

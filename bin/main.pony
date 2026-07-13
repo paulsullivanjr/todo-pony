@@ -11,6 +11,11 @@ actor Main is hobby.ServerNotify
     _env = env
     let auth = lori.TCPListenAuth(env.root)
     let assets = FilePath(FileAuth(env.root), "assets")
+
+    // Task 3: connect to Postgres and prove the async query flow at startup.
+    // TCP *connect* authority (distinct from the *listen* authority above).
+    Db(lori.TCPConnectAuth(env.root), DbConfig(env.vars), env.out)
+
     let app = hobby.Application
       .> get(
         "/",
